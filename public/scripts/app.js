@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -18,10 +18,10 @@ var IndecisionApp = function (_React$Component) {
   }
 
   _createClass(IndecisionApp, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(Header, null),
         React.createElement(Action, null),
@@ -44,20 +44,20 @@ var Header = function (_React$Component2) {
   }
 
   _createClass(Header, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-          'h1',
+          "h1",
           null,
-          'Indecision App'
+          "Indecision App"
         ),
         React.createElement(
-          'h2',
+          "h2",
           null,
-          'Put your life in the hands of a computer'
+          "Put your life in the hands of a computer"
         )
       );
     }
@@ -76,15 +76,15 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-          'button',
+          "button",
           null,
-          'What should i do?'
+          "What should i do?"
         )
       );
     }
@@ -103,15 +103,15 @@ var Options = function (_React$Component4) {
   }
 
   _createClass(Options, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-          'p',
+          "p",
           null,
-          'Options component here'
+          "Options component here"
         ),
         React.createElement(Option, null)
       );
@@ -131,15 +131,15 @@ var Option = function (_React$Component5) {
   }
 
   _createClass(Option, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-          'p',
+          "p",
           null,
-          'Option component is here'
+          "Option component is here"
         )
       );
     }
@@ -152,21 +152,38 @@ var AddOption = function (_React$Component6) {
   _inherits(AddOption, _React$Component6);
 
   function AddOption() {
+    var _ref;
+
+    var _temp, _this6, _ret;
+
     _classCallCheck(this, AddOption);
 
-    return _possibleConstructorReturn(this, (AddOption.__proto__ || Object.getPrototypeOf(AddOption)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this6 = _possibleConstructorReturn(this, (_ref = AddOption.__proto__ || Object.getPrototypeOf(AddOption)).call.apply(_ref, [this].concat(args))), _this6), _this6.onSubmit = function (e) {
+      e.preventDefault();
+      var option = e.target.elements.option.value;
+      console.log('option', option, _this6);
+    }, _temp), _possibleConstructorReturn(_this6, _ret);
   }
 
   _createClass(AddOption, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-          'p',
-          null,
-          'Add option component here'
+          "form",
+          { onSubmit: this.onSubmit },
+          React.createElement("input", { type: "text", name: "option" }),
+          React.createElement(
+            "button",
+            null,
+            "Add option"
+          )
         )
       );
     }

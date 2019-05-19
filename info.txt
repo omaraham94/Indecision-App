@@ -12,6 +12,7 @@ url :- babeljs.io
 install babel-cli to install two more dependencies for react to
 work those are react and env for using jsx
 they are: -
+babel-cli,// global module
 babel-preset-env,
 babel-preset-react
 
@@ -23,3 +24,88 @@ command to compile the app.js file
 babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 
 // to watch all the changes
+
+
+when should u use e.preventDefault()
+it is used when u dont want the normal action to take place. ie the default action
+that would happen if the above method was not there.
+
+eg:- form onSubmit method. we dont want to submit the form. rather we just want to
+see what is typed in it.
+thus here we use preventDefault method to prevent the normal action from taking place.
+ie.there would be no full page refresh.which other wise would happen if there was
+no e.preventDefault.
+
+
+
+javascript info :-
+
+const obj = {
+    name: 'vikram'
+    getName: function() {
+        console.log(this.name)
+    }
+}
+
+will work
+
+but
+
+const obj = {
+    name: 'vikram'
+    getName: function() {
+        console.log(this.name)
+    }
+}
+
+const getName = obj.getName;
+
+console.log(getName()) will not work since it doesnot have a reference to the this object;
+
+hence binding is used
+
+thus if const getName = obj.getname.bind(<which_object_you_want_to_bind_to);
+is used, it will work perfectly fine.
+
+this.setState({}) -- this will direct update the state object
+but not a better one
+
+rather this one should be used :-
+
+this.setState((prevState) => {return ({<new state obect>})}); to update the state.
+
+to use arrow functions in class, we have to add another babel plugin :-
+"babel-plugin-transform-class-properties"
+
+why web-pack ! what is web pack :-
+
+web pack is a bundler to get all the js in different files combined to one js file
+with all the dependent modules in it.
+
+before webpack:-
+
+we had all the data in the public folder like index.html
+
+react.js and reactdom.js app.js and utils.js
+
+and all of them have to be loaded in the correct order like
+react first and then reactdom and utils.js app.js
+
+or else it will not understand
+
+after webpack :-
+we have our app in a directory structure.
+like public(index.html), src(app.js, utils.js), node_modules(React, reactdom)
+
+webpack starts from app.js and understands all the dependencies required from app.js
+
+and after webpack is run, we will have a single file :- bundle.js with all the
+
+required code.
+
+webpack can run babel as well. so no need to write separate code for it.
+
+avoid global modules:-
+this is because it will hide the dependency of the modules which are required to run
+the app. since
+

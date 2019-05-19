@@ -120,3 +120,18 @@ exports always takes references to an export
 importing npm modules :-
 install the module, import the module, use.
 
+loader in webpack helps us to use babel for transpilation of our react code.
+
+loader lets us customise the behaviour of webpack when it loads a file.
+in our case we will run it through babel for transpilation.
+
+for this we need to install babel-core as it allows us to run babel from
+webpack
+
+babel-loader:- webpack plugin. allows us to teach webpack how to run babel
+when webpack sees certain files
+
+for presets, we have to create a separate file called .babelrc at root of directory
+it is necessary because babel doesnot do anything by default. hence create it and
+put ur presets and plugins in it for babel to use it.
+it is a json file

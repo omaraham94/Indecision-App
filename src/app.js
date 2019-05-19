@@ -1,16 +1,18 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-var template =(
-  <div>
-    <h1>Indecision App</h1>
-    <p>Put your life in the hands of a computer</p>
-    <p>Here are your options</p>
-    <ol>
-      <li>Item one</li>
-      <li>Item two</li>
-    </ol>
-  </div>
-);
+class HelloWorld extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    );
+  }
+}
 
-var appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(<HelloWorld/>, appRoot);
+
+// this fails because we have not done babel configuration yet in webpack

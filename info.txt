@@ -109,3 +109,14 @@ avoid global modules:-
 this is because it will hide the dependency of the modules which are required to run
 the app. since
 
+webpack configuration :-
+
+doc : -webpack.js.org.
+
+webpack gives us the power to use import export statements.
+
+exports always takes references to an export
+
+importing npm modules :-
+install the module, import the module, use.
+

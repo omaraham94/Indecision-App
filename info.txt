@@ -135,3 +135,7 @@ for presets, we have to create a separate file called .babelrc at root of direct
 it is necessary because babel doesnot do anything by default. hence create it and
 put ur presets and plugins in it for babel to use it.
 it is a json file
+
+
+cheap-eval-module-source-map :- this is used for debugging with webpack to find the exact location
+of error.

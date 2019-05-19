@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 class HelloWorld extends React.Component {
   render() {
+    consssole.log('hello world');
     return (
       <div>
         <h1>Hello World</h1>

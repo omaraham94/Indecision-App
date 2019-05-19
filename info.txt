@@ -1,0 +1,25 @@
+live-server is a web server. it is started with the command
+live-server <folder_name> // this is the folder u want to serve
+to the outside world to access.
+
+babel is a javascript compiler.
+it does the work of taking latest features of javascript and
+make them compatable to the older versions of the browser or
+older browsers
+
+url :- babeljs.io
+
+install babel-cli to install two more dependencies for react to
+work those are react and env for using jsx
+they are: -
+babel-preset-env,
+babel-preset-react
+
+the above are the dependencies of babel needed to resolve react jsx
+and es6 syntax for older browsers
+
+command to compile the app.js file
+
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+// to watch all the changes
